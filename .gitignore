@@ -1,0 +1,22 @@
+.vs/
+**/.vs/
+bin/
+obj/
+.vscode/
+*.user
+*.suo
+appsettings.Development.json
+
+.vs/
+**/.vs/
+bin/
+**/bin/
+obj/
+**/obj/
+*.user
+*.suo
+appsettings.Development.json
+
+# Perfiles y configuraciones de Azure
+veterinariweb/Properties/PublishProfiles/
+veterinariweb/Properties/ServiceDependencies/
