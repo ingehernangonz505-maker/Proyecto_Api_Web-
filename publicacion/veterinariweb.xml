@@ -1,0 +1,186 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>veterinariweb</name>
+    </assembly>
+    <members>
+        <member name="M:veterinariweb.Controllers.CategoriasController.GetCategori">
+            <summary>
+            Ver Categorias disponibles
+            </summary>
+        </member>
+        <member name="M:veterinariweb.Controllers.ComprasController.GetComprasConDetalles">
+            <summary>
+            Consultar todas las compras realizadas
+            </summary>
+        </member>
+        <member name="M:veterinariweb.Controllers.ComprasController.GetCompraPorId(System.Int32)">
+            <summary>
+            Consultar una compra por ID
+            </summary>
+        </member>
+        <member name="M:veterinariweb.Controllers.ComprasController.PostCompra(Capa_Entidades.Compras)">
+            <summary>
+            Registrar una compra
+            </summary>
+        </member>
+        <member name="M:veterinariweb.Controllers.ComprasController.DeleteCompra(System.Int32)">
+            <summary>
+            Eliminar compra
+            </summary>
+        </member>
+        <member name="M:veterinariweb.Controllers.InventarioController.GetInventarios(Capa_Entidades.MiDbContext)">
+            <summary>
+            Consultar Inventario actual
+            </summary>
+            <returns>token valido</returns>
+        </member>
+        <member name="M:veterinariweb.Controllers.InventarioController.GetInventarioPorProducto(System.Int32,Capa_Entidades.MiDbContext)">
+            <summary>
+            Buscar Inventario por ID del Producto
+            </summary>
+            
+        </member>
+        <member name="M:veterinariweb.Controllers.InventarioController.InsertarInventario(Capa_Entidades.Inventario,Capa_Entidades.MiDbContext)">
+            <summary>
+            Insertar Nuevo Producto en el Inventario
+            </summary>
+            <returns>token valido</returns>
+        </member>
+        <member name="M:veterinariweb.Controllers.InventarioController.ActualizarInventario(Capa_Entidades.Inventario)">
+            <summary>
+            Actualizar Inventario
+            </summary>
+            <returns>token valido</returns>
+        </member>
+        <member name="T:veterinariweb.Controllers.LoginController">
+            <summary>
+            Permite a un usuario Iniciar Sesion y generar Token JWt
+            </summary>
+        </member>
+        <member name="M:veterinariweb.Controllers.LoginController.Login(Capa_Entidades.LoginRequest)">
+            <summary>
+            Iniciar Sesion
+            </summary>
+        </member>
+        <member name="M:veterinariweb.Controllers.LoginController.GetDatos">
+            <summary>
+            Permite Confirmar si el Usuario tiene Acceso Autorizado
+            </summary>
+        </member>
+        <member name="M:veterinariweb.Controllers.ProductoController.GetProductos">
+             <summary>
+            ver todos los Productos
+             </summary>
+        </member>
+        <member name="M:veterinariweb.Controllers.ProductoController.GetProductoById(System.Int32)">
+            <summary>
+            Consultar Productos por ID
+            </summary>
+        </member>
+        <member name="M:veterinariweb.Controllers.ProductoController.PostProducto(Capa_Entidades.Producto)">
+            <summary>
+            Insertar Nuevos Productos
+            </summary>
+        </member>
+        <member name="M:veterinariweb.Controllers.ProductoController.GetProductoById(System.Int32,Capa_Entidades.Producto)">
+            <summary>
+            Actualizar los Productos
+            </summary> 
+        </member>
+        <member name="M:veterinariweb.Controllers.ProductoController.DeleteProducto(System.Int32)">
+            <summary>
+            Eliminar Productos por ID
+            </summary>
+        </member>
+        <member name="M:veterinariweb.Controllers.proveedorController.GetProveedores">
+             <summary>
+            ver todos los Proveedores
+             </summary>
+        </member>
+        <member name="M:veterinariweb.Controllers.proveedorController.GetProveedorById(System.Int32)">
+            <summary>
+            Consultar Proveedor por ID
+            </summary>
+        </member>
+        <member name="M:veterinariweb.Controllers.proveedorController.Postproveedor(Capa_Entidades.Proveedor)">
+            <summary>
+            Insertar Nuevos Proveedores
+            </summary>
+        </member>
+        <member name="M:veterinariweb.Controllers.proveedorController.GetProveedorById(System.Int32,Capa_Entidades.Proveedor)">
+            <summary>
+            Actualizar los Proveedores
+            </summary> 
+        </member>
+        <member name="M:veterinariweb.Controllers.proveedorController.DeleteProveedor(System.Int32)">
+            <summary>
+            Eliminar Proveedor por ID
+            </summary>
+        </member>
+        <member name="M:veterinariweb.Controllers.RolController.GetRol">
+            <summary>
+            Se muestra los Roles disponibles para crear nuevos Usuarios
+            </summary>
+        </member>
+        <member name="M:veterinariweb.Controllers.UsuarioRolController.GetUsuarios">
+            <summary>
+            Ver todos los usuarios
+            </summary>
+        </member>
+        <member name="M:veterinariweb.Controllers.UsuarioRolController.GetUsuarioById(System.Int32)">
+            <summary>
+            Consultar Usuarios por ID
+            </summary>
+        </member>
+        <member name="M:veterinariweb.Controllers.UsuarioRolController.CrearUsuario(Capa_Entidades.Usuario.UsuarioCreateDto)">
+            <summary>
+            Crear nuevos Usuarios
+            </summary>
+        </member>
+        <member name="M:veterinariweb.Controllers.UsuarioRolController.ActualizarUsuario(System.Int32,Capa_Entidades.Usuario.UsuarioUpdateDto)">
+            <summary>
+            Atualizar Usuarios
+            </summary>
+        </member>
+        <member name="M:veterinariweb.Controllers.UsuarioRolController.EliminarUsuario(System.Int32)">
+            <summary>
+            Eliminar Usuarios por ID
+            </summary>
+        </member>
+        <member name="M:veterinariweb.Controllers.VentasController.GetVentasConDetalles">
+            <summary>
+            Consultar todas las Ventas realizadas
+            </summary>
+        </member>
+        <member name="M:veterinariweb.Controllers.VentasController.GetVentasConDetalles(System.Int32)">
+            <summary>
+            Consultar una venta por ID
+            </summary>
+            <returns>token valido</returns>
+            
+        </member>
+        <member name="M:veterinariweb.Controllers.VentasController.PostVenta(Capa_Entidades.Ventas)">
+            <summary>
+            Realizar una Venta
+            </summary>
+        </member>
+        <member name="M:veterinariweb.Controllers.VentasController.DeleteVenta(System.Int32)">
+            <summary>
+            Eliminar Ventas
+            </summary>
+        </member>
+        <member name="T:veterinariweb.Migrations.AddTableTodoItems">
+            <inheritdoc />
+        </member>
+        <member name="M:veterinariweb.Migrations.AddTableTodoItems.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:veterinariweb.Migrations.AddTableTodoItems.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:veterinariweb.Migrations.AddTableTodoItems.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+    </members>
+</doc>

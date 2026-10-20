@@ -4,29 +4,58 @@ trigger:
 pool:
   vmImage: "windows-latest"
 
+variables:
+  buildConfiguration: "Release"
+
 steps:
+  # 1. Instalar .NET 10
   - task: UseDotNet@2
+    displayName: "Instalar .NET 10 SDK"
     inputs:
       packageType: "sdk"
-      version: "8.0.x"
+      version: "10.0.x"
 
+  # 2. Restaurar dependencias
   - task: DotNetCoreCLI@2
+    displayName: "Restaurar paquetes"
     inputs:
       command: "restore"
       projects: "**/*.csproj"
 
+  # 3. Compilar el proyecto
   - task: DotNetCoreCLI@2
+    displayName: "Compilar API"
     inputs:
       command: "build"
       projects: "**/*.csproj"
+      arguments: "--configuration $(buildConfiguration) --no-restore"
 
+  # 4. Ejecutar pruebas si existe un proyecto de pruebas
   - task: DotNetCoreCLI@2
+    displayName: "Ejecutar pruebas"
+    inputs:
+      command: "test"
+      projects: "**/*Tests.csproj"
+      arguments: "--configuration $(buildConfiguration)"
+    condition: |
+      and(
+        succeeded(),
+        eq(variables['HasTests'], 'true')
+      )
+
+  # 5. Publicar la API
+  - task: DotNetCoreCLI@2
+    displayName: "Publicar API"
     inputs:
       command: "publish"
       publishWebProjects: true
-      arguments: "--configuration Release --output $(Build.ArtifactStagingDirectory)"
+      arguments: "--configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory)/publish"
+      zipAfterPublish: true
 
+  # 6. Guardar el artefacto
   - task: PublishBuildArtifacts@1
+    displayName: "Publicar artefacto"
     inputs:
-      PathtoPublish: "$(Build.ArtifactStagingDirectory)"
+      PathtoPublish: "$(Build.ArtifactStagingDirectory)/publish"
       ArtifactName: "drop"
+      publishLocation: "Container"
